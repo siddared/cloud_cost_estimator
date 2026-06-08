@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>
+Cost Calculator
+</h2>
+
+<form method="POST">
+
+<label>
+Region
+</label>
+
+<select name="region"
+        class="form-control">
+
+<option>
+ap-south-1
+</option>
+
+<option>
+us-east-1
+</option>
+
+<option>
+eu-west-1
+</option>
+
+</select>
+
+<br>
+
+<label>
+EC2 Type
+</label>
+
+<select name="ec2"
+        class="form-control">
+
+<option>
+t2.micro
+</option>
+
+<option>
+t2.small
+</option>
+
+<option>
+t3.micro
+</option>
+
+</select>
+
+<br>
+
+<label>
+Monthly Hours
+</label>
+
+<input type="number"
+       name="hours"
+       class="form-control">
+
+<br>
+
+<label>
+S3 Storage (GB)
+</label>
+
+<input type="number"
+       name="storage"
+       class="form-control">
+
+<br>
+
+<label>
+RDS Instances
+</label>
+
+<input type="number"
+       name="rds"
+       class="form-control">
+
+<br>
+
+<label>
+Data Transfer (GB)
+</label>
+
+<input type="number"
+       name="transfer"
+       class="form-control">
+
+<br>
+
+<button class="btn btn-success">
+
+Calculate
+
+</button>
+
+</form>
+
+{% if total %}
+
+<hr>
+
+<div class="alert alert-success">
+
+<h3>
+
+Estimated Cost:
+${{ total }}
+
+</h3>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

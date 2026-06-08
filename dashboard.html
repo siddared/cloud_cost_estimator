@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>
+Cloud Dashboard
+</h2>
+
+<hr>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card bg-primary text-white">
+
+<div class="card-body">
+
+<h4>
+
+EC2
+
+</h4>
+
+<p>
+
+Virtual Servers
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card bg-success text-white">
+
+<div class="card-body">
+
+<h4>
+
+S3
+
+</h4>
+
+<p>
+
+Storage Service
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card bg-danger text-white">
+
+<div class="card-body">
+
+<h4>
+
+RDS
+
+</h4>
+
+<p>
+
+Managed Database
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<a href="/estimate"
+   class="btn btn-warning">
+
+Estimate Cost
+
+</a>
+
+{% endblock %}

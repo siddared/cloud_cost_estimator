@@ -1,0 +1,129 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">
+        Cloud Cost Analytics Report
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    Cost Distribution
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="costChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white">
+
+                    Cost Summary
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>Service</th>
+                            <th>Estimated Share</th>
+                        </tr>
+
+                        <tr>
+                            <td>EC2</td>
+                            <td>40%</td>
+                        </tr>
+
+                        <tr>
+                            <td>S3</td>
+                            <td>20%</td>
+                        </tr>
+
+                        <tr>
+                            <td>RDS</td>
+                            <td>25%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Data Transfer</td>
+                            <td>15%</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning">
+
+            Optimization Recommendations
+
+        </div>
+
+        <div class="card-body">
+
+            <ul>
+
+                <li>
+                    Use Reserved Instances for long-running EC2 workloads.
+                </li>
+
+                <li>
+                    Delete unused EBS volumes and snapshots.
+                </li>
+
+                <li>
+                    Move infrequently accessed files to S3 Glacier.
+                </li>
+
+                <li>
+                    Enable Auto Scaling to reduce idle resources.
+                </li>
+
+                <li>
+                    Monitor costs regularly using AWS Cost Explorer.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static',
+filename='js/chart.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>
+Cost History
+</h2>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>ID</th>
+
+<th>Region</th>
+
+<th>EC2</th>
+
+<th>S3</th>
+
+<th>RDS</th>
+
+<th>Transfer</th>
+
+<th>Total</th>
+
+</tr>
+
+{% for row in data %}
+
+<tr>
+
+<td>{{ row.id }}</td>
+
+<td>{{ row.region }}</td>
+
+<td>{{ row.ec2_type }}</td>
+
+<td>{{ row.s3_storage }}</td>
+
+<td>{{ row.rds_instances }}</td>
+
+<td>{{ row.data_transfer }}</td>
+
+<td>${{ row.total_cost }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
